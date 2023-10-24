@@ -1,0 +1,8 @@
+processador\ValorDiario.class
+amazonenv\Main.class
+processador\Dado.class
+amazonenv\S3Downloader.class
+amazonenv\SnsTopic.class
+processador\ProcessadorDeDados.class
+amazonenv\S3Uploader.class
+processador\GeradorDeRelatorio.class
