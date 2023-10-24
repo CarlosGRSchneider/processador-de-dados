@@ -20,7 +20,8 @@ public class S3Downloader {
 
     public List<String> downloadFileFromS3() {
 
-        String nomeBucket = "bucket-dados";
+//      Aqui colocar o nome do seu bucket que recebe a massa de dados
+        String nomeBucket = "o nome do seu bucket de massa de dados aqui";
         String nomeArquivoBucket = "massa-de-dados" + LocalDate.now() + ".csv";
 
         S3Object object = s3Client.getObject(new GetObjectRequest(nomeBucket, nomeArquivoBucket));

@@ -20,7 +20,8 @@ public class S3Uploader {
 
         byte[] relatorioEmBytes = relatorioEmString.getBytes(StandardCharsets.UTF_8);
 
-        String bucketName = "bucket-relatorios-gerados";
+//      Colocar aqui o nome do seu bucket de saida
+        String bucketName = "o nome do seu bucket de saida do relatorio aqui";
 
         try {
 
