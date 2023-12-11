@@ -7,6 +7,7 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
+import java.time.ZoneId;
 
 public class S3Uploader {
 
@@ -25,7 +26,7 @@ public class S3Uploader {
 
         try {
 
-            String chaveDoArquivo = "relatorio" + LocalDate.now() + ".txt";
+            String chaveDoArquivo = "relatorio" + LocalDate.now(ZoneId.of("GMT")) + ".txt";
 
             ObjectMetadata metadata = new ObjectMetadata();
             metadata.setContentLength(relatorioEmBytes.length);

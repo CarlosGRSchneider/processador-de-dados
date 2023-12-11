@@ -21,10 +21,10 @@ public class Main {
         if (linhasCsv != null) {
 
             ProcessadorDeDados processador = new ProcessadorDeDados();
-            String csv = processador.processaDados(linhasCsv);
+            String relatorioEmTxt = processador.processaDados(linhasCsv);
 
             S3Uploader uploader = new S3Uploader(s3Client);
-            uploader.upload(csv);
+            uploader.upload(relatorioEmTxt);
 
             SnsTopic.enviaMensagemDeSucesso(snsClient);
 

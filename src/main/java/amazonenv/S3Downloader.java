@@ -7,6 +7,7 @@ import com.amazonaws.util.IOUtils;
 
 import java.io.InputStream;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class S3Downloader {
 
 //      Aqui colocar o nome do seu bucket que recebe a massa de dados
         String nomeBucket = "o nome do seu bucket de massa de dados aqui";
-        String nomeArquivoBucket = "massa-de-dados" + LocalDate.now() + ".csv";
+        String nomeArquivoBucket = "massa-de-dados" + LocalDate.now(ZoneId.of("GMT")) + ".csv";
 
         S3Object object = s3Client.getObject(new GetObjectRequest(nomeBucket, nomeArquivoBucket));
         try (InputStream leitorDeObjeto = object.getObjectContent()) {

@@ -4,6 +4,7 @@ import com.amazonaws.services.sns.AmazonSNS;
 import com.amazonaws.services.sns.model.PublishRequest;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 
 public class SnsTopic {
 
@@ -11,7 +12,7 @@ public class SnsTopic {
     public static void enviaMensagemDeSucesso(AmazonSNS snsClient) {
 //      Colocar o seu topico aqui
         String snsTopicArn = "o nome do seu topico vem aqui";
-        String mensagem = "Um novo relatorio foi publicado em " + LocalDate.now() + "\n\n Ele se encontra disponivel no bucket-relatorios-gerados.";
+        String mensagem = "Um novo relatorio foi publicado em " + LocalDate.now(ZoneId.of("GMT")) + "\n\n Ele se encontra disponivel no bucket-relatorios-gerados.";
 
 
         PublishRequest publishRequest = new PublishRequest()
